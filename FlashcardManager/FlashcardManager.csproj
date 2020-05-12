@@ -46,16 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FlashcardAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FlashcardAdd.Designer.cs">
+      <DependentUpon>FlashcardAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlashcardRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlashcardRemove.Designer.cs">
+      <DependentUpon>FlashcardRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlashcardReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlashcardReview.Designer.cs">
+      <DependentUpon>FlashcardReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlashcardHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlashcardHome.Designer.cs">
+      <DependentUpon>FlashcardHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FlashcardAdd.resx">
+      <DependentUpon>FlashcardAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlashcardRemove.resx">
+      <DependentUpon>FlashcardRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlashcardReview.resx">
+      <DependentUpon>FlashcardReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlashcardHome.resx">
+      <DependentUpon>FlashcardHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
