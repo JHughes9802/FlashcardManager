@@ -1,5 +1,5 @@
 ﻿// Requirements - needs to receive Terms and TermsAndDefinitions lists
-// Beyond that, this form should be set
+// Beyond that, this form should be set for testing
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
