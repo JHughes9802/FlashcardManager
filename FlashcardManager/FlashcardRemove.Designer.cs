@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.ckbTerm = new System.Windows.Forms.CheckedListBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.clsTerm = new System.Windows.Forms.CheckedListBox();
             this.txtDefinition = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -48,12 +48,14 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(227, 244);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -63,24 +65,26 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnAdd
+            // btnRemove
             // 
-            this.btnAdd.Location = new System.Drawing.Point(32, 244);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnRemove.Location = new System.Drawing.Point(32, 244);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 4;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // ckbTerm
+            // clsTerm
             // 
-            this.ckbTerm.FormattingEnabled = true;
-            this.ckbTerm.Location = new System.Drawing.Point(32, 25);
-            this.ckbTerm.Name = "ckbTerm";
-            this.ckbTerm.ScrollAlwaysVisible = true;
-            this.ckbTerm.Size = new System.Drawing.Size(270, 64);
-            this.ckbTerm.TabIndex = 1;
+            this.clsTerm.FormattingEnabled = true;
+            this.clsTerm.Location = new System.Drawing.Point(32, 25);
+            this.clsTerm.Name = "clsTerm";
+            this.clsTerm.ScrollAlwaysVisible = true;
+            this.clsTerm.Size = new System.Drawing.Size(270, 64);
+            this.clsTerm.TabIndex = 1;
             // 
             // txtDefinition
             // 
@@ -109,10 +113,10 @@
             this.ClientSize = new System.Drawing.Size(337, 279);
             this.Controls.Add(this.txtDefinition);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ckbTerm);
+            this.Controls.Add(this.clsTerm);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.label1);
             this.Name = "FlashcardRemove";
             this.Text = "Remove Flashcards";
@@ -126,8 +130,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.CheckedListBox ckbTerm;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.CheckedListBox clsTerm;
         private System.Windows.Forms.TextBox txtDefinition;
         private System.Windows.Forms.Label label2;
     }

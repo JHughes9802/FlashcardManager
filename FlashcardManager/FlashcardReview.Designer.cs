@@ -33,10 +33,13 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.lblFlashcard = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblFlashcard);
             this.groupBox1.Location = new System.Drawing.Point(12, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(443, 191);
@@ -51,15 +54,18 @@
             this.btnFlip.TabIndex = 1;
             this.btnFlip.Text = "Flip";
             this.btnFlip.UseVisualStyleBackColor = true;
+            this.btnFlip.Click += new System.EventHandler(this.btnFlip_Click);
             // 
             // btnReturn
             // 
+            this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnReturn.Location = new System.Drawing.Point(41, 240);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(75, 23);
             this.btnReturn.TabIndex = 2;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnPrevious
             // 
@@ -69,6 +75,7 @@
             this.btnPrevious.TabIndex = 3;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -78,6 +85,16 @@
             this.btnNext.TabIndex = 4;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lblFlashcard
+            // 
+            this.lblFlashcard.Location = new System.Drawing.Point(6, 12);
+            this.lblFlashcard.Name = "lblFlashcard";
+            this.lblFlashcard.Size = new System.Drawing.Size(431, 172);
+            this.lblFlashcard.TabIndex = 0;
+            this.lblFlashcard.Text = "label1";
+            this.lblFlashcard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FlashcardReview
             // 
@@ -92,6 +109,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FlashcardReview";
             this.Text = "Review Flashcards";
+            this.Load += new System.EventHandler(this.FlashcardReview_Load);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,5 +122,6 @@
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblFlashcard;
     }
 }

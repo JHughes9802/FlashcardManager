@@ -42,6 +42,7 @@
             this.btnAddCards.TabIndex = 0;
             this.btnAddCards.Text = "Add Cards";
             this.btnAddCards.UseVisualStyleBackColor = true;
+            this.btnAddCards.Click += new System.EventHandler(this.btnAddCards_Click);
             // 
             // btnRemoveCards
             // 
@@ -51,6 +52,7 @@
             this.btnRemoveCards.TabIndex = 1;
             this.btnRemoveCards.Text = "Remove Cards";
             this.btnRemoveCards.UseVisualStyleBackColor = true;
+            this.btnRemoveCards.Click += new System.EventHandler(this.btnRemoveCards_Click);
             // 
             // btnReviewCards
             // 
@@ -60,6 +62,7 @@
             this.btnReviewCards.TabIndex = 2;
             this.btnReviewCards.Text = "Review Cards";
             this.btnReviewCards.UseVisualStyleBackColor = true;
+            this.btnReviewCards.Click += new System.EventHandler(this.btnReviewCards_Click);
             // 
             // btnExit
             // 
@@ -70,6 +73,7 @@
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FlashcardHome
             // 
