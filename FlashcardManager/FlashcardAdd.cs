@@ -18,19 +18,13 @@ namespace FlashcardManager
         // A bool to keep track of whether or not a message should be displayed if btnCancel is clicked
         private bool AddClicked = false;
         // Copies of the lists - don't want to have the real ones replaced if the user clicks cancel
-        List<string> TermsCopy = new List<string>();
+        List<string> TermsCopy = new List<string>();  // Do you need this, if you can figure out the terms from TermsAndDefinitions? 
         SortedList<string, string> TermsAndDefinitionsCopy = new SortedList<string, string>();
 
+        SortedList<string, string> TermsAndDefinitions;  // Expect FlashcardHome to provide this
         public FlashcardAdd()
         {
-            InitializeComponent();
-
-            foreach (string term in TermsAndDefinitions.Keys)
-            {
-                TermsCopy.Add(term);
-                // If things don't look right in FlashcardReview, this is like likely the cause
-                TermsAndDefinitionsCopy.Add(term, TermsAndDefinitions[term]);
-            }
+            InitializeComponent();    // move setup in load event handler, end of file
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -57,8 +51,17 @@ namespace FlashcardManager
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Make sure this properly updates by checking in FlashcardReview
-            Terms = TermsCopy;
+           // Terms = TermsCopy;
             TermsAndDefinitions = TermsAndDefinitionsCopy;
+
+            // Do we need to save and close here? If so,
+            // set the tag to the new TermsAndConditions sorted list, so FlashcardHome can access it 
+            // User interface question - you have "Save" and "Cancel" which one does the user click to close 
+            // this window when they want to save changes and return to FlashcardHome?  This 
+            // code could go in that button's event handler
+            Tag = TermsAndDefinitionsCopy;
+            Close();  // ?   
+
         }
 
         // Set this to discard changes if the user clicks "yes" when prompted
@@ -122,6 +125,18 @@ namespace FlashcardManager
             }
 
             return true;
+        }
+
+        private void FlashcardAdd_Load(object sender, EventArgs e)
+        {
+            TermsAndDefinitions = (SortedList<string, string>)Tag;   // assume FlashcardHome has sent the TermsAndDefinitions
+
+            foreach (string term in TermsAndDefinitions.Keys)  
+            {
+                TermsCopy.Add(term);   // I'm not sure you need to keep track of the terms list here. FlashcardHome may need to, but here you probably don't
+                // If things don't look right in FlashcardReview, this is like likely the cause
+                TermsAndDefinitionsCopy.Add(term, TermsAndDefinitions[term]);
+            }
         }
     }
 }

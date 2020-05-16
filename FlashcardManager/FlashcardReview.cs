@@ -31,7 +31,7 @@ namespace FlashcardManager
             /* These prevent the user from pressing a button that'll set the
              * CurrentCard tracker outside the boundaries of the lists */
             btnPrevious.Enabled = false;
-            if (Terms.Count == 1)
+           // if (Terms.Count == 1)
             {
                 btnNext.Enabled = false;
             }
@@ -41,13 +41,13 @@ namespace FlashcardManager
             /* This is similar to the randomized quiz. However, I find it unnecessary to
              * randomize both the selected item and the placed index. You get similar results
              * by randomizing only one or the other */
-            while (Terms.Count > 0)
-            {
-                int index = random.Next(Terms.Count);
-                string term = Terms[index];
-                ShuffledTerms.Add(term);
-                Terms.RemoveAt(index);
-            }
+            //while (Terms.Count > 0)
+            //{
+            //    int index = random.Next(Terms.Count);
+            //    string term = Terms[index];
+            //    ShuffledTerms.Add(term);
+            //    Terms.RemoveAt(index);
+            //}
             
             // This sets the label to display the first term after they've been shuffled
             lblFlashcard.Text = ShuffledTerms[CurrentCard];
@@ -63,7 +63,7 @@ namespace FlashcardManager
             }
             else
             {
-                lblFlashcard.Text = TermsAndDefinitions[ShuffledTerms[CurrentCard]];
+               // lblFlashcard.Text = TermsAndDefinitions[ShuffledTerms[CurrentCard]];
             }
 
             CurrentCard++;
@@ -91,7 +91,7 @@ namespace FlashcardManager
             }
             else
             {
-                lblFlashcard.Text = TermsAndDefinitions[ShuffledTerms[CurrentCard]];
+                //lblFlashcard.Text = TermsAndDefinitions[ShuffledTerms[CurrentCard]];
             }
 
             CurrentCard--;
@@ -114,7 +114,7 @@ namespace FlashcardManager
              * alignment centered, but I felt like changing with btnFlip it as a proof of concept*/
             if (ShowingTerm)
             {
-                lblFlashcard.Text = TermsAndDefinitions[ShuffledTerms[CurrentCard]];
+                //lblFlashcard.Text = TermsAndDefinitions[ShuffledTerms[CurrentCard]];
 
                 // Autofill helped me find this one
                 lblFlashcard.TextAlign = ContentAlignment.TopLeft;

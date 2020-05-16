@@ -28,13 +28,13 @@ namespace FlashcardManager
         {
             InitializeComponent();
 
-            foreach (string term in TermsAndDefinitions.Keys)
-            {
-                clsTerm.Items.Add(term);
-                TermsCopy.Add(term);
-                // If things don't display as intended, this is like likely the cause
-                TermsAndDefinitionsCopy.Add(term, TermsAndDefinitions[term]);
-            }
+            //foreach (string term in TermsAndDefinitions.Keys)
+            //{
+            //    clsTerm.Items.Add(term);
+            //    TermsCopy.Add(term);
+            //    // If things don't display as intended, this is like likely the cause
+            //    TermsAndDefinitionsCopy.Add(term, TermsAndDefinitions[term]);
+            //}
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -69,8 +69,8 @@ namespace FlashcardManager
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Make sure this is works as intended once the Class gets figured out
-            Terms = TermsCopy;
-            TermsAndDefinitions = TermsAndDefinitionsCopy;
+            //Terms = TermsCopy;
+            //TermsAndDefinitions = TermsAndDefinitionsCopy;
         }
 
         // Set this to discard changes if the user clicks "yes" when prompted
