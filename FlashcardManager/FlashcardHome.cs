@@ -44,7 +44,7 @@ namespace FlashcardManager
 
             Flashcards = new List<Flashcard> { test3, test4 };
 
-            string test5 = null;
+            string test5 = "";
 
             foreach (object item in Flashcards)
             {
@@ -59,7 +59,13 @@ namespace FlashcardManager
         private void btnAddCards_Click(object sender, EventArgs e)
         {
             FlashcardAdd flashcardAdd = new FlashcardAdd();
+            flashcardAdd.Tag = Test;
             flashcardAdd.ShowDialog();
+
+            // Get the updated sortedlist 
+            Test = (SortedList<string, string>)flashcardAdd.Tag;
+            // Only testing to see if the flashcards are updated correctly
+            MessageBox.Show(String.Join(", ", Test.Keys) + "\n" +String.Join(", ", Test.Values));
         }
 
         private void btnRemoveCards_Click(object sender, EventArgs e)

@@ -32,5 +32,9 @@ namespace FlashcardManager
                 return definitionList;
             } }
 
+        public override string ToString()   // return something human-readable 
+        {
+            return Term + " " + Definition; 
+        }
     }
 }
